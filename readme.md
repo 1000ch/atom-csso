@@ -1,4 +1,4 @@
-# atom-csso
+# [atom-csso](https://atom.io/packages/atom-csso)
 
 ## About
 
