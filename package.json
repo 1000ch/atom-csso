@@ -1,0 +1,24 @@
+{
+  "name": "atom-csso",
+  "version": "0.0.0",
+  "main": "./lib/csso",
+  "private": true,
+  "description": "Optimize css",
+  "activationEvents": [
+    "csso:execute"
+  ],
+  "repository": "https://github.com/1000ch/atom-csso",
+  "license": "MIT",
+  "author": {
+    "name": "Shogo Sensui",
+    "email": "shogo.sensui@gmail.com",
+    "url": "http://1000ch.net"
+  },
+  "engines": {
+    "atom": "*",
+    "node": "*"
+  },
+  "dependencies": {
+    "csso": "^1.3.11"
+  }
+}
