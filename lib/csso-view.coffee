@@ -8,7 +8,7 @@ module.exports =
 
     initialize: (serializeState) ->
       atom.workspaceView.command "csso:execute", => @execute()
-      atom.workspaceView.command "csso:restruct", => @restruct()
+      atom.workspaceView.command "csso:restructure", => @restructure()
 
     # Returns an object that can be retrieved when package is activated
     serialize: ->

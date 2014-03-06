@@ -9,7 +9,7 @@ module.exports =
 
   activate: (state) ->
     atom.workspaceView.command 'csso:execute', => @execute()
-    atom.workspaceView.command 'csso:restructure', => restructure()
+    atom.workspaceView.command 'csso:restructure', => @restructure()
 
   getExecPath: ->
     "ATOM_SHELL_INTERNAL_RUN_AS_NODE=1 '#{process.execPath}'"
