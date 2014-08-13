@@ -1,9 +1,9 @@
 {
-  "name": "atom-csso",
-  "version": "0.2.0",
+  "name": "csso",
+  "version": "0.2.1",
   "main": "./lib/csso",
   "private": true,
-  "description": "Optimize css",
+  "description": "Optimize css with restructuring",
   "activationEvents": [
     "csso:execute"
   ],
