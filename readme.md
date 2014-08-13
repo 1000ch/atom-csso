@@ -1,13 +1,13 @@
-# [atom-csso](https://atom.io/packages/atom-csso)
+# [atom-csso](https://atom.io/packages/csso)
 
 ## About
 
-Optimize css.
+Optimize css with restructuring.
 
 ## Installation
 
 ```sh
-$ apm install atom-csso
+$ apm install csso
 ```
 
 ## Usage
