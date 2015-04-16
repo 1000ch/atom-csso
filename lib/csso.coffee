@@ -8,8 +8,8 @@ CSSO = require('csso')
 module.exports =
 
   activate: (state) ->
-    atom.workspaceView.command 'csso:execute', => @execute()
-    atom.workspaceView.command 'csso:restructure', => @restructure()
+    atom.commands.add 'atom-workspace', 'csso:execute', => @execute()
+    atom.commands.add 'atom-workspace', 'csso:restructure', => @restructure()
 
   getExecPath: ->
     "ATOM_SHELL_INTERNAL_RUN_AS_NODE=1 '#{process.execPath}'"
@@ -18,7 +18,7 @@ module.exports =
     atom.config.get('csso.nodepath')
 
   execute: ->
-    editor = atom.workspace.getActiveEditor()
+    editor = atom.workspace.getActiveTextEditor()
 
     return unless editor isnt no
 
@@ -47,7 +47,7 @@ module.exports =
         console.log(e)
 
   restructure: ->
-    editor = atom.workspace.getActiveEditor()
+    editor = atom.workspace.getActiveTextEditor()
 
     return unless editor isnt no
 
