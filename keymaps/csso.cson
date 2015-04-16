@@ -1,3 +1,3 @@
-'.workspace':
+'atom-workspace':
   'ctrl-o': 'csso:execute'
   'ctrl-shift-o': 'csso:restructure'
