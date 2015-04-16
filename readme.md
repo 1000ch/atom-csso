@@ -2,7 +2,7 @@
 
 ## About
 
-Optimize css with restructuring.
+Optimize css with CSSO.
 
 ## Installation
 
