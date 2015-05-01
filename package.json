@@ -4,9 +4,9 @@
   "main": "./lib/csso",
   "private": true,
   "description": "Optimize css with CSSO",
-  "activationEvents": [
-    "csso:execute"
-  ],
+  "activationCommands": {
+    "atom-workspace": ["csso:execute"]
+  },
   "repository": "https://github.com/1000ch/atom-csso",
   "license": "MIT",
   "author": {
