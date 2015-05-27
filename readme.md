@@ -20,4 +20,4 @@ Selected text will be optimized if there is selection.
 
 ## License
 
-MIT
+MIT: http://1000ch.mit-license.org
