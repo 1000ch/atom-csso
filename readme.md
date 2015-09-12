@@ -1,8 +1,6 @@
-# [atom-csso](https://atom.io/packages/csso)
+# [atom-csso](https://atom.io/packages/csso) [![Dependency Status](https://david-dm.org/1000ch/atom-csso.svg)](https://david-dm.org/1000ch/atom-csso)
 
-## About
-
-Optimize css with CSSO.
+Optimize css with [CSSO](http://github.com/css/csso).
 
 ## Installation
 
