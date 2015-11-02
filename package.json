@@ -1,12 +1,13 @@
 {
   "name": "csso",
   "version": "1.0.0",
-  "main": "./lib/csso",
+  "main": "index.js",
   "private": true,
-  "description": "Optimize css with CSSO",
+  "description": "Minify CSS with CSSO",
   "activationCommands": {
     "atom-workspace": [
-      "csso:execute"
+      "csso:execute",
+      "csso:restructure"
     ]
   },
   "repository": "https://github.com/1000ch/atom-csso",
@@ -17,10 +18,9 @@
     "url": "http://github.com/1000ch"
   },
   "engines": {
-    "atom": "*",
-    "node": "*"
+    "atom": ">=1.0.0"
   },
   "dependencies": {
-    "csso": "^1.3.11"
+    "csso": "^1.4.1"
   }
 }

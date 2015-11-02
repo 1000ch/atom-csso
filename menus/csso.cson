@@ -1,9 +1,9 @@
 'context-menu':
   'atom-workspace': [{
-    label: 'Optimize css',
-    command: 'csso:execute'
+    label: 'Minify CSS',
+    command: 'csso:minify'
   }, {
-    label: 'Optimize and restructure css',
+    label: 'Minify CSS with restructuring',
     command: 'csso:restructure'
   }]
 
@@ -12,10 +12,10 @@
   submenu: [
     label: 'CSSO'
     submenu: [{
-      label: 'Optimize css',
-      command: 'csso:execute'
+      label: 'Minify CSS',
+      command: 'csso:minify'
     }, {
-      label: 'Optimize and restructure css',
+      label: 'Minify CSS with restructuring',
       command: 'csso:restructure'
     }]
   ]
