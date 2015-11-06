@@ -17,17 +17,15 @@ const minify = (restructuring = false) => {
   let option = { restructuring };
 
   if (selectedText.length !== 0) {
-    let minifiedCSS = csso.minify(selectedText, option);
-    if (minifiedCSS) {
-      editor.setTextInBufferRange(
-        editor.getSelectedBufferRange(),
-        minifiedCSS
-      );
+    let css = csso.minify(selectedText, option);
+    if (css) {
+      let range = editor.getSelectedBufferRange();
+      editor.setTextInBufferRange(range, css);
     }
   } else {
-    let minifiedCSS = csso.minify(text, option);
-    if (minifiedCSS) {
-      editor.setText(minifiedCSS);
+    let css = csso.minify(text, option);
+    if (css) {
+      editor.setText(css);
     }
   }
 
