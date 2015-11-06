@@ -10,7 +10,7 @@ $ apm install csso
 
 ## Usage
 
-- Press `ctrl + o` / `ctrl + shift + o`
+- Press <kbd>ctrl</kbd> + <kbd>o</kbd> / <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>o</kbd>
 - `Packages` > `CSSO` > `Minify CSS` / `Minify CSS with restructuring`
 - Right Click > `Minify CSS` / `Minify CSS with restructuring`
 
