@@ -1,10 +1,8 @@
 'use babel';
 
-import fs from 'fs';
 import csso from 'csso';
 
-const minify = (restructuring = false) => {
-
+function minify(restructuring = false) {
   const editor = atom.workspace.getActiveTextEditor();
 
   if (!editor) {
@@ -21,18 +19,19 @@ const minify = (restructuring = false) => {
     if (css) {
       let range = editor.getSelectedBufferRange();
       editor.setTextInBufferRange(range, css);
+      editor.setCursorBufferPosition(position);
     }
   } else {
     let css = csso.minify(text, option);
     if (css) {
       editor.setText(css);
+      editor.setCursorBufferPosition(position);
     }
   }
 
-  editor.setCursorBufferPosition(position);
 };
 
-export const activate = (state) => {
+export function activate(state) {
   atom.commands.add('atom-workspace', 'csso:minify', () => minify(false));
   atom.commands.add('atom-workspace', 'csso:restructre', () => minify(true));
 };

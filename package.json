@@ -1,7 +1,6 @@
 {
   "name": "csso",
   "version": "1.1.1",
-  "main": "index.js",
   "private": true,
   "description": "Minify CSS with CSSO",
   "activationCommands": {
@@ -10,17 +9,29 @@
       "csso:restructure"
     ]
   },
-  "repository": "https://github.com/1000ch/atom-csso",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1000ch/atom-csso.git"
+  },
+  "engines": {
+    "atom": ">=1.0.0"
+  },
+  "keywords": [
+    "css",
+    "csso",
+    "minify"
+  ],
   "author": {
     "name": "1000ch",
     "email": "shogo.sensui@gmail.com",
     "url": "http://github.com/1000ch"
   },
-  "engines": {
-    "atom": ">=1.0.0"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/1000ch/atom-csso/issues"
   },
+  "homepage": "https://github.com/1000ch/atom-csso#readme",
   "dependencies": {
-    "csso": "^1.4.1"
+    "csso": "^1.5.1"
   }
 }
