@@ -1,34 +1,37 @@
 'use babel';
 
-import csso from 'csso';
+import { normalize, join } from 'path';
+import { spawn } from 'child_process';
 
-function minify(restructuring = false) {
+const CSSO_PATH = normalize(join(__dirname, 'node_modules', '.bin', 'csso'));
+
+function minify(restructure = false) {
   const editor = atom.workspace.getActiveTextEditor();
 
   if (!editor) {
     return;
   }
 
-  let position = editor.getCursorBufferPosition();
-  let text = editor.getText();
-  let selectedText = editor.getSelectedText();
-  let option = { restructuring };
-
-  if (selectedText.length !== 0) {
-    let css = csso.minify(selectedText, option);
-    if (css) {
-      let range = editor.getSelectedBufferRange();
-      editor.setTextInBufferRange(range, css);
-      editor.setCursorBufferPosition(position);
-    }
-  } else {
-    let css = csso.minify(text, option);
-    if (css) {
-      editor.setText(css);
-      editor.setCursorBufferPosition(position);
-    }
+  let args = ['--input', editor.getPath()];
+  if (!restructure) {
+    args.push('--restructure-off');
   }
 
+  let chunks = [];
+  let cp = spawn(CSSO_PATH, args);
+  cp.stdout.on('data', chunk => {
+    chunks.push(chunk);
+  });
+
+  cp.on('error', error => {
+    console.error(error);
+  });
+
+  cp.on('exit', _ => {
+    let position = editor.getCursorBufferPosition();
+    editor.setText(Buffer.concat(chunks).toString());
+    editor.setCursorBufferPosition(position);
+  });
 };
 
 export function activate(state) {

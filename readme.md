@@ -14,8 +14,6 @@ $ apm install csso
 - `Packages` > `CSSO` > `Minify CSS` / `Minify CSS with restructuring`
 - Right Click > `Minify CSS` / `Minify CSS with restructuring`
 
-Selected CSS will be minified if selection exists.
-
 ## License
 
 MIT: http://1000ch.mit-license.org

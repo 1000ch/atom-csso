@@ -5,14 +5,11 @@
   "description": "Minify CSS with CSSO",
   "activationCommands": {
     "atom-workspace": [
-      "csso:execute",
+      "csso:minify",
       "csso:restructure"
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/1000ch/atom-csso.git"
-  },
+  "repository": "1000ch/atom-csso",
   "engines": {
     "atom": ">=1.0.0"
   },
@@ -32,6 +29,6 @@
   },
   "homepage": "https://github.com/1000ch/atom-csso#readme",
   "dependencies": {
-    "csso": "^1.8.0"
+    "csso": "^2.0.0"
   }
 }
