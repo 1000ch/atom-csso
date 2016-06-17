@@ -1,9 +1,12 @@
 'use babel';
 
+import { existsSync } from 'fs';
 import { normalize, join } from 'path';
 import { spawn } from 'child_process';
 
-const CSSO_PATH = normalize(join(__dirname, 'node_modules', '.bin', 'csso'));
+const unix = normalize(join(__dirname, 'node_modules', '.bin', 'csso'));
+const win = normalize(join(__dirname, 'node_modules', '.bin', 'csso.cmd'));
+const CSSO_PATH = existsSync(unix) ? unix : win;
 
 function minify(restructure = false) {
   const editor = atom.workspace.getActiveTextEditor();
