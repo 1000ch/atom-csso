@@ -1,6 +1,6 @@
 {
   "name": "csso",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "private": true,
   "description": "Minify CSS with CSSO",
   "activationCommands": {
