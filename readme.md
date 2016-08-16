@@ -1,6 +1,8 @@
-# [atom-csso](https://atom.io/packages/csso) [![Dependency Status](https://david-dm.org/1000ch/atom-csso.svg)](https://david-dm.org/1000ch/atom-csso)
+# [atom-csso](https://atom.io/packages/csso)
 
 Minify CSS with [CSSO](http://github.com/css/csso).
+
+[![Dependency Status](https://david-dm.org/1000ch/atom-csso.svg)](https://david-dm.org/1000ch/atom-csso)
 
 ## Installation
 
