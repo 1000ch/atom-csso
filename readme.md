@@ -12,9 +12,8 @@ $ apm install csso
 
 ## Usage
 
-- Press <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>o</kbd> / <kbd>ctrl</kbd> + <kbd>option</kbd> + <kbd>o</kbd>
 - `Packages` > `CSSO` > `Minify CSS` / `Minify CSS with restructuring`
-- Right Click > `Minify CSS` / `Minify CSS with restructuring`
+- Context Menu > `Minify CSS` / `Minify CSS with restructuring`
 
 ## License
 
