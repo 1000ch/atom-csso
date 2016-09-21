@@ -1,5 +1,5 @@
 'context-menu':
-  'atom-workspace': [{
+  'atom-text-editor': [{
     label: 'Minify CSS',
     command: 'csso:minify'
   }, {
