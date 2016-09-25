@@ -37,10 +37,9 @@ function minify(restructure = false) {
   });
 
   cp.on('exit', code => {
-    if(code == 2) {
+    if (code === 2) {
       atom.notifications.addError(Buffer.concat(errors).toString(), {});
-    }
-    else {
+    } else {
       let position = editor.getCursorBufferPosition();
       editor.setText(Buffer.concat(chunks).toString());
       editor.setCursorBufferPosition(position);
