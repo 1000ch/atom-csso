@@ -8,7 +8,23 @@ const unix = normalize(join(__dirname, 'node_modules', '.bin', 'csso'));
 const win = normalize(join(__dirname, 'node_modules', '.bin', 'csso.cmd'));
 const csso = type() === 'Windows_NT' ? win : unix;
 
-function minify(restructure = false) {
+let subscriptions;
+let restructure;
+
+export function activate(state) {
+  subscriptions = new CompositeDisposable();
+  subscriptions.add(atom.config.observe('csso.restructure', value => {
+    restructure = value;
+  }));
+
+  atom.commands.add('atom-workspace', 'csso:minify', () => minify());
+};
+
+export function deactivate() {
+  subscriptions.dispose();
+}
+
+function minify() {
   const editor = atom.workspace.getActiveTextEditor();
 
   if (!editor) {
@@ -28,9 +44,4 @@ function minify(restructure = false) {
   }).catch(error => {
     atom.notifications.addError(errors.toString(), {});
   });
-};
-
-export function activate(state) {
-  atom.commands.add('atom-workspace', 'csso:minify', () => minify(false));
-  atom.commands.add('atom-workspace', 'csso:restructre', () => minify(true));
 };

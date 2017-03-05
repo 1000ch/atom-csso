@@ -5,9 +5,16 @@
   "description": "Minify CSS with CSSO",
   "activationCommands": {
     "atom-workspace": [
-      "csso:minify",
-      "csso:restructure"
+      "csso:minify"
     ]
+  },
+  "configSchema": {
+    "restructure": {
+      "title": "Restructure",
+      "description": "Restructure CSS on minify",
+      "type": "boolean",
+      "default": true
+    }
   },
   "repository": "1000ch/atom-csso",
   "engines": {
