@@ -4,9 +4,9 @@ Minify CSS with [CSSO](http://github.com/css/csso).
 
 [![Dependency Status](https://david-dm.org/1000ch/atom-csso.svg)](https://david-dm.org/1000ch/atom-csso)
 
-## Installation
+## Install
 
-```sh
+```bash
 $ apm install csso
 ```
 
@@ -17,4 +17,4 @@ $ apm install csso
 
 ## License
 
-MIT: http://1000ch.mit-license.org
+[MIT](https://1000ch.mit-license.org) © [Shogo Sensui](https://github.com/1000ch)
