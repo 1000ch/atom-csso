@@ -2,11 +2,11 @@
 
 import { type } from 'os';
 import { normalize, join } from 'path';
-import { spawn } from 'child_process';
+import execa from 'execa';
 
 const unix = normalize(join(__dirname, 'node_modules', '.bin', 'csso'));
 const win = normalize(join(__dirname, 'node_modules', '.bin', 'csso.cmd'));
-const CSSO_PATH = type() === 'Windows_NT' ? win : unix;
+const csso = type() === 'Windows_NT' ? win : unix;
 
 function minify(restructure = false) {
   const editor = atom.workspace.getActiveTextEditor();
@@ -15,35 +15,18 @@ function minify(restructure = false) {
     return;
   }
 
-  let args = ['--input', editor.getPath()];
-  if (!restructure) {
-    args.push('--restructure-off');
-  }
+  const args = restructure ? [] : ['--restructure-off'];
+  const buffer = Buffer.from(editor.getText());
 
-  let chunks = [];
-  let errors = [];
-
-  let cp = spawn(CSSO_PATH, args);
-  cp.stdout.on('data', chunk => {
-    chunks.push(chunk);
-  });
-
-  cp.stderr.on('data', error => {
-    errors.push(error);
-  });
-
-  cp.on('error', error => {
-    atom.notifications.addError(error, {});
-  });
-
-  cp.on('exit', code => {
-    if (code === 2) {
-      atom.notifications.addError(Buffer.concat(errors).toString(), {});
-    } else {
-      let position = editor.getCursorBufferPosition();
-      editor.setText(Buffer.concat(chunks).toString());
-      editor.setCursorBufferPosition(position);
-    }
+  execa.stdout(csso, args, {
+    encoding: null,
+    input: buffer
+  }).then(stdout => {
+    const position = editor.getCursorBufferPosition();
+    editor.setText(stdout.toString());
+    editor.setCursorBufferPosition(position);
+  }).catch(error => {
+    atom.notifications.addError(errors.toString(), {});
   });
 };
 
