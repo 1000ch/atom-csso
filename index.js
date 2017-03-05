@@ -1,5 +1,6 @@
 'use babel';
 
+import { CompositeDisposable } from 'atom';
 import { type } from 'os';
 import { normalize, join } from 'path';
 import execa from 'execa';
