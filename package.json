@@ -3,6 +3,9 @@
   "version": "2.5.2",
   "private": true,
   "description": "Minify CSS with CSSO",
+  "scripts": {
+    "test": "eslint ."
+  },
   "activationCommands": {
     "atom-workspace": [
       "csso:minify"
@@ -38,5 +41,8 @@
   "dependencies": {
     "csso": "^2.2.1",
     "execa": "^0.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.17.1"
   }
 }

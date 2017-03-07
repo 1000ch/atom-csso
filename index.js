@@ -12,14 +12,14 @@ const csso = type() === 'Windows_NT' ? win : unix;
 let subscriptions;
 let restructure;
 
-export function activate(state) {
+export function activate() {
   subscriptions = new CompositeDisposable();
   subscriptions.add(atom.config.observe('csso.restructure', value => {
     restructure = value;
   }));
 
   atom.commands.add('atom-workspace', 'csso:minify', () => minify());
-};
+}
 
 export function deactivate() {
   subscriptions.dispose();
@@ -45,4 +45,4 @@ function minify() {
   }).catch(error => {
     atom.notifications.addError(error.toString(), {});
   });
-};
+}
