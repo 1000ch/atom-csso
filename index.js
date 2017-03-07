@@ -43,6 +43,6 @@ function minify() {
     editor.setText(stdout.toString());
     editor.setCursorBufferPosition(position);
   }).catch(error => {
-    atom.notifications.addError(errors.toString(), {});
+    atom.notifications.addError(error.toString(), {});
   });
 };
