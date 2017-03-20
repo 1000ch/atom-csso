@@ -1,48 +1,42 @@
 'use babel';
 
-import { CompositeDisposable } from 'atom';
-import { type } from 'os';
-import { normalize, join } from 'path';
+import os from 'os';
+import path from 'path';
 import execa from 'execa';
 
-const unix = normalize(join(__dirname, 'node_modules', '.bin', 'csso'));
-const win = normalize(join(__dirname, 'node_modules', '.bin', 'csso.cmd'));
-const csso = type() === 'Windows_NT' ? win : unix;
-
-let subscriptions;
-let restructure;
+const unix = path.normalize(path.join(__dirname, 'node_modules', '.bin', 'csso'));
+const win = path.normalize(path.join(__dirname, 'node_modules', '.bin', 'csso.cmd'));
+const csso = os.type() === 'Windows_NT' ? win : unix;
 
 export function activate() {
-  subscriptions = new CompositeDisposable();
-  subscriptions.add(atom.config.observe('csso.restructure', value => {
-    restructure = value;
-  }));
-
-  atom.commands.add('atom-workspace', 'csso:minify', () => minify());
+  atom.commands.add('atom-workspace', 'csso:minify', () => {
+    minify(atom.workspace.getActiveTextEditor());
+  });
 }
 
-export function deactivate() {
-  subscriptions.dispose();
-}
-
-function minify() {
-  const editor = atom.workspace.getActiveTextEditor();
-
+export function minify(editor) {
   if (!editor) {
     return;
   }
 
-  const args = restructure ? [] : ['--restructure-off'];
+  const args = atom.config.get('csso.restructure') ? [] : ['--restructure-off'];
   const buffer = Buffer.from(editor.getText());
 
-  execa.stdout(csso, args, {
+  return process(args, buffer)
+    .then(stdout => setText(editor, stdout.toString()))
+    .catch(error => atom.notifications.addError(error.toString(), {}));
+}
+
+function process(args, buffer) {
+  return execa.stdout(csso, args, {
     encoding: null,
     input: buffer
-  }).then(stdout => {
-    const position = editor.getCursorBufferPosition();
-    editor.setText(stdout.toString());
-    editor.setCursorBufferPosition(position);
-  }).catch(error => {
-    atom.notifications.addError(error.toString(), {});
   });
+}
+
+function setText(editor, text) {
+  const position = editor.getCursorBufferPosition();
+  editor.setText(text);
+  editor.setCursorBufferPosition(position);
+  return Promise.resolve(editor);
 }
