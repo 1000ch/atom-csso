@@ -2,9 +2,6 @@
   'atom-text-editor': [{
     label: 'Minify CSS',
     command: 'csso:minify'
-  }, {
-    label: 'Minify CSS with restructuring',
-    command: 'csso:restructure'
   }]
 
 'menu': [{
@@ -14,9 +11,6 @@
     submenu: [{
       label: 'Minify CSS',
       command: 'csso:minify'
-    }, {
-      label: 'Minify CSS with restructuring',
-      command: 'csso:restructure'
     }]
   ]
 }]
