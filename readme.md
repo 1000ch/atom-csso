@@ -8,6 +8,8 @@ Minify CSS with [CSSO](http://github.com/css/csso).
 [![Dependency Status](https://david-dm.org/1000ch/atom-csso.svg)](https://david-dm.org/1000ch/atom-csso)
 [![devDependency Status](https://david-dm.org/1000ch/atom-csso/dev-status.svg)](https://david-dm.org/1000ch/atom-csso?type=dev)
 
+![demo](demo.gif)
+
 ## Install
 
 ```bash
