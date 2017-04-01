@@ -18,8 +18,15 @@ $ apm install csso
 
 ## Usage
 
-- `Packages` > `CSSO` > `Minify CSS` / `Minify CSS with restructuring`
-- Context Menu > `Minify CSS` / `Minify CSS with restructuring`
+- Packages > CSSO > **Minify CSS**
+- Context Menu > **Minify CSS**
+- Command Palette (<kbd>⌘</kbd> + <kbd>shift</kbd> + <kbd>P</kbd>) > **Minify CSS**
+
+## Config
+
+### Restructure
+
+Restructure CSS on minify.
 
 ## License
 

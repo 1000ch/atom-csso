@@ -1,9 +1,9 @@
 'use babel';
 
-import path from 'path';
+import { join } from 'path';
+import { minify } from '..';
 
-const fixture = path.join(__dirname, 'fixture.css');
-const { minify } = require('..');
+const fixture = join(__dirname, 'fixture.css');
 
 describe('CSSO plugin for Atom', () => {
   beforeEach(() => {
@@ -35,7 +35,7 @@ describe('CSSO plugin for Atom', () => {
 
         return atom.workspace.open(fixture)
           .then(editor => minify(editor))
-          .then((editor) => {
+          .then(editor => {
             expect(editor.getText()).toEqual(`.foo{border-color:red #00f red red}`);
           });
       });
