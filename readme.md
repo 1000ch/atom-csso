@@ -8,7 +8,7 @@ Minify CSS with [CSSO](http://github.com/css/csso).
 [![Dependency Status](https://david-dm.org/1000ch/atom-csso.svg)](https://david-dm.org/1000ch/atom-csso)
 [![devDependency Status](https://david-dm.org/1000ch/atom-csso/dev-status.svg)](https://david-dm.org/1000ch/atom-csso?type=dev)
 
-![demo](demo.gif)
+![demo](https://cloud.githubusercontent.com/assets/1800018/24584846/539b0992-17b6-11e7-8617-5068ac30403e.gif)
 
 ## Install
 
