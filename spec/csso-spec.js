@@ -8,6 +8,12 @@ const fixture = join(__dirname, 'fixture.css');
 describe('CSSO plugin for Atom', () => {
   beforeEach(() => {
     atom.workspace.destroyActivePaneItem();
+
+    waitsForPromise(() =>
+      Promise.all([
+        atom.packages.activatePackage('language-css')
+      ])
+    );
   });
 
   describe('define functions', () => {
