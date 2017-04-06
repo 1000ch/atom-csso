@@ -9,7 +9,7 @@ const win = path.normalize(path.join(__dirname, 'node_modules', '.bin', 'csso.cm
 const csso = os.type() === 'Windows_NT' ? win : unix;
 
 export function activate() {
-  atom.commands.add('atom-workspace', 'csso:minify', () => {
+  atom.commands.add('atom-text-editor:not([mini])', 'csso:minify', () => {
     minify(atom.workspace.getActiveTextEditor());
   });
 }

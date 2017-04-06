@@ -8,7 +8,7 @@
     "pretest": "eslint ."
   },
   "activationCommands": {
-    "atom-workspace": [
+    "atom-text-editor:not([mini])": [
       "csso:minify"
     ]
   },
