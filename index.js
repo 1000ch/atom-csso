@@ -16,13 +16,13 @@ export function activate() {
 
 export function minify(editor) {
   if (!editor) {
-    return Promise.reject('Editor is invalid');
+    return Promise.reject(new Error('Editor is invalid'));
   }
 
   const grammar = editor.getGrammar().name.toLowerCase();
 
   if ('css' !== grammar) {
-    return Promise.reject(`${grammar} is not supported.`);
+    return Promise.reject(new Error(`${grammar} is not supported.`));
   }
 
   const args = atom.config.get('csso.restructure') ? [] : ['--restructure-off'];
