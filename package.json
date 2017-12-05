@@ -20,7 +20,10 @@
       "default": true
     }
   },
-  "repository": "1000ch/atom-csso",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:1000ch/atom-csso.git"
+  },
   "engines": {
     "atom": ">=1.0.0"
   },
