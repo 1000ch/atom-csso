@@ -25,7 +25,7 @@ export function minify(editor) {
     return Promise.reject(new Error(`${grammar} is not supported.`));
   }
 
-  const args = atom.config.get('csso.restructure') ? [] : ['--restructure-off'];
+  const args = atom.config.get('csso.restructure') ? [] : ['--no-restructure'];
   const buffer = Buffer.from(editor.getText());
 
   return process(args, buffer)
