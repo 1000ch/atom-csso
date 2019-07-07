@@ -29,12 +29,12 @@ export function minify(editor) {
   const buffer = Buffer.from(editor.getText());
 
   return process(args, buffer)
-    .then(stdout => setText(editor, stdout.toString()))
+    .then(result => setText(editor, result.stdout.toString()))
     .catch(error => atom.notifications.addError(error.toString(), {}));
 }
 
 function process(args, buffer) {
-  return execa.stdout(csso, args, {
+  return execa(csso, args, {
     encoding: null,
     input: buffer
   });
