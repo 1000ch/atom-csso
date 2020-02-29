@@ -43,8 +43,8 @@
   },
   "homepage": "https://github.com/1000ch/atom-csso#readme",
   "dependencies": {
-    "csso-cli": "^2.0.2",
-    "execa": "^2.0.3"
+    "csso-cli": "^3.0.0",
+    "execa": "^4.0.0"
   },
   "devDependencies": {
     "eslint": "^6.0.1"
