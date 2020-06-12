@@ -1,6 +1,8 @@
 ### Project specific config ###
 language: generic
-os: linux
+os:
+  - linux
+  - osx
 
 env:
   matrix:
