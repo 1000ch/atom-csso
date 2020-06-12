@@ -3,7 +3,6 @@
 Minify CSS with [CSSO](http://github.com/css/csso).
 
 [![Build Status](https://travis-ci.org/1000ch/atom-csso.svg?branch=master)](https://travis-ci.org/1000ch/atom-csso)
-[![Build status](https://ci.appveyor.com/api/projects/status/7umbjetiej6267ms?svg=true)](https://ci.appveyor.com/project/1000ch/atom-csso)
 [![Dependency Status](https://david-dm.org/1000ch/atom-csso.svg)](https://david-dm.org/1000ch/atom-csso)
 [![devDependency Status](https://david-dm.org/1000ch/atom-csso/dev-status.svg)](https://david-dm.org/1000ch/atom-csso?type=dev)
 
