@@ -1,4 +1,4 @@
-# [atom-csso](https://atom.io/packages/csso)
+# atom-[csso](https://atom.io/packages/csso)
 
 Minify CSS with [CSSO](http://github.com/css/csso).
 
