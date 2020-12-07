@@ -47,6 +47,6 @@
     "execa": "^4.1.0"
   },
   "devDependencies": {
-    "eslint": "^7.14.0"
+    "eslint": "^7.15.0"
   }
 }
