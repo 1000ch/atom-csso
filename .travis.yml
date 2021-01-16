@@ -1,7 +1,6 @@
 ### Project specific config ###
 language: generic
 os:
-  - linux
   - osx
 
 env:
